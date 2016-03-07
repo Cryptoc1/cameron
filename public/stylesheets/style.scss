@@ -1,0 +1,39 @@
+$font-family: "Montserrat", sans-serif;
+$banner-colour: #7FDBFF;
+
+body {
+	background: #fff;
+	margin: 0;
+
+	.wrapper {
+		font-family: $font-family;
+
+		nav#banner {
+			background-color: $banner-colour;
+			.fa { margin: 10px; }
+
+			h1 {
+				margin: 0;
+				padding: 1em;
+				color: #fff;
+			}
+
+			ul.page-links {
+				list-style-type: none;
+				li {
+					text-decoration: none;
+					display: inline;
+					float: right; // fucking css is dropping below the nav
+					padding: 0.5em;
+					&:hover { background: darken($banner-colour, 20%); }
+					a {
+						color: #eee;
+						text-decoration: none;
+						font-size: 1.1em;
+					}
+				}
+			}
+
+		}
+	}
+}

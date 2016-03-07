@@ -1,0 +1,35 @@
+{
+  "name": "cameron",
+  "version": "1.0.0",
+  "description": "A friendly API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trmml/cameron.git"
+  },
+  "keywords": [
+    "cameron",
+    "compliment",
+    "api",
+    "node"
+  ],
+  "author": "Josh Trommel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trmml/cameron/issues"
+  },
+  "homepage": "https://github.com/trmml/cameron#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-util": "^3.0.7"
+  }
+}

@@ -1,0 +1,26 @@
+body {
+  background: #fff;
+  margin: 0; }
+  body .wrapper {
+    font-family: "Montserrat", sans-serif; }
+    body .wrapper nav#banner {
+      background-color: #7FDBFF; }
+      body .wrapper nav#banner .fa {
+        margin: 10px; }
+      body .wrapper nav#banner h1 {
+        margin: 0;
+        padding: 1em;
+        color: #fff; }
+      body .wrapper nav#banner ul.page-links {
+        list-style-type: none; }
+        body .wrapper nav#banner ul.page-links li {
+          text-decoration: none;
+          display: inline;
+          float: right;
+          padding: 0.5em; }
+          body .wrapper nav#banner ul.page-links li:hover {
+            background: #19beff; }
+          body .wrapper nav#banner ul.page-links li a {
+            color: #eee;
+            text-decoration: none;
+            font-size: 1.1em; }
