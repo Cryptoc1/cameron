@@ -23,7 +23,7 @@ body {
 				display: inline-block;
 				list-style-type: none;
 				float: right;
-				margin:  2em 1em 0 0;
+				margin:  2.25em 1em 0 0;
 				li {
 					text-decoration: none;
 					display: inline; // fucking css is dropping below the nav
@@ -31,7 +31,7 @@ body {
 					text-align: right;
 					&:hover { background: darken($banner-colour, 20%); }
 					a {
-						color: #eee;
+						color: #fff;
 						text-decoration: none;
 						font-size: 1.1em;
 					}

@@ -16,7 +16,7 @@ body {
         display: inline-block;
         list-style-type: none;
         float: right;
-        margin: 2em 1em 0 0; }
+        margin: 2.25em 1em 0 0; }
         body .wrapper nav#banner ul.page-links li {
           text-decoration: none;
           display: inline;
@@ -25,6 +25,6 @@ body {
           body .wrapper nav#banner ul.page-links li:hover {
             background: #19beff; }
           body .wrapper nav#banner ul.page-links li a {
-            color: #eee;
+            color: #fff;
             text-decoration: none;
             font-size: 1.1em; }
