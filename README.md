@@ -1,7 +1,7 @@
 Cameron
 =======
 
-Introducing Cameron, the friendly API. Becauase everybody needs a pick-me-up.
+Introducing Cameron, the friendly API. Because everybody needs a pick-me-up.
 
 API Endpoints
 -------------
