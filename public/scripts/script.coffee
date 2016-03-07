@@ -100,3 +100,6 @@ compliments = [
 	'You\'re really something special.',
 	'You\'re a gift to those around you.'
 ]
+
+compliment = ->
+	compliments[Math.floor(Math.random() * compliments.length)];
