@@ -4,7 +4,7 @@
   "description": "A friendly API.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "gulp compile && node index.js"
   },
   "repository": {
     "type": "git",
