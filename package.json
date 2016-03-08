@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/trmml/cameron#readme",
   "dependencies": {
+    "Sentimental": "^1.0.1",
     "express": "^4.13.4",
     "hbs": "^4.0.0",
     "install": "^0.5.6",
