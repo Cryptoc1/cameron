@@ -30,5 +30,9 @@ app.get('/compliment/markov', function(req, res) {
 	res.render('compliment', {compliment: markov});
 });
 
+app.get('*', function(req, res) {
+	res.send('dude what are you doing and how did you get here... <a href="/">go home</a>');
+});
+
 app.listen(process.env.PORT || 2267);
 console.log('listening on port 2267');
