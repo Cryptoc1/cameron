@@ -11,7 +11,8 @@ var fs = require('fs'),
     Other things to ponder...
     + Use Async file reads
     + Setup a system that lets users tell you if the sentence makes sense, then use that information to
-        change the probabilty of certain words occuring after others.
+        change the probabilty of certain words occuring after others. This would involve having to write
+        our own chaining algorithm (http://www.soliantconsulting.com/blog/2013/02/title-generator-using-markov-chains)
     + Add the markov generated compliments to compliments.txt (I see exponential degration in the chain though)
     + Allow users to submit more compliments [, after validating with Sentimental,]  then write them to compliments.txt
 */
