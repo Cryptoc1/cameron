@@ -22,5 +22,5 @@ app.get('/compliment', function(req, res) {
 	res.render('compliment', {compliment: compliment});
 });
 
-app.listen(2267);
+app.listen(process.env.PORT || 2267);
 console.log('listening on port 2267');
