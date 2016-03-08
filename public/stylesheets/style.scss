@@ -8,6 +8,11 @@ body {
 	.wrapper {
 		font-family: $font-family;
 
+		.compliment {
+			text-align: center;
+			margin-top: 10%;
+		}
+
 		nav#banner {
 			background-color: $banner-colour;
 			.fa { margin: 10px; }
@@ -17,6 +22,7 @@ body {
 				padding: 1em;
 				color: #fff;
 				display: inline-block;
+				a { color: inherit; text-decoration: none;}
 			}
 
 			ul.page-links {
@@ -29,7 +35,7 @@ body {
 					display: inline;
 					height: 0 !important;
 					padding: 1em;
-					&:hover { background: darken($banner-colour, 20%); }
+					&:hover, &#selected { background: darken($banner-colour, 20%); }
 					a {
 						color: #fff;
 						text-decoration: none;

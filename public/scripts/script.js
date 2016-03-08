@@ -5,3 +5,5 @@ compliments = ['Your smile is contagious.', 'You look great today.', 'You\'re a 
 compliment = function() {
   return compliments[Math.floor(Math.random() * compliments.length)];
 };
+
+module.exports = compliment;

@@ -102,3 +102,5 @@ compliments = [
 ]
 
 compliment = -> compliments[Math.floor(Math.random() * compliments.length)];
+
+module.exports = compliment; # this throws an error regardless of whether or not i have it
