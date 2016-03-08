@@ -101,5 +101,4 @@ compliments = [
 	'You\'re a gift to those around you.'
 ]
 
-compliment = ->
-	compliments[Math.floor(Math.random() * compliments.length)];
+compliment = -> compliments[Math.floor(Math.random() * compliments.length)];

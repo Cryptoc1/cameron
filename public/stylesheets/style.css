@@ -20,8 +20,8 @@ body {
         body .wrapper nav#banner ul.page-links li {
           text-decoration: none;
           display: inline;
-          padding: 0.5em;
-          text-align: right; }
+          height: 0 !important;
+          padding: 1em; }
           body .wrapper nav#banner ul.page-links li:hover {
             background: #19beff; }
           body .wrapper nav#banner ul.page-links li a {

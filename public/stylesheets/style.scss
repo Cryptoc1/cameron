@@ -26,9 +26,9 @@ body {
 				margin:  2.25em 1em 0 0;
 				li {
 					text-decoration: none;
-					display: inline; // fucking css is dropping below the nav
-					padding: 0.5em;
-					text-align: right;
+					display: inline;
+					height: 0 !important;
+					padding: 1em;
 					&:hover { background: darken($banner-colour, 20%); }
 					a {
 						color: #fff;
