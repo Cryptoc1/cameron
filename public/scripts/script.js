@@ -1,6 +1,13 @@
-var fs = require('fs'),
-    Markov = require('markovchain'),
-    sentiment = require('Sentimental')
+var Markov, compliments, fs, markovCompliment, randomCompliment, sentiment;
+
+fs = require('fs');
+
+Markov = require('markovchain');
+
+sentiment = require('Sentimental');
+
+compliments = fs.readFileSync('./public/compliments.txt', 'utf8');
+
 
 /* TODO:
     + Have it start with :name on /compliment/:name
@@ -15,22 +22,23 @@ var fs = require('fs'),
         our own chaining algorithm (http://www.soliantconsulting.com/blog/2013/02/title-generator-using-markov-chains)
     + Add the markov generated compliments to compliments.txt (I see exponential degration in the chain though)
     + Allow users to submit more compliments [, after validating with Sentimental,]  then write them to compliments.txt
-*/
+ */
 
-function generateCompliment () {
-    // Weird linking to the compliments.txt because this code is executed at the same level as index.js
-    var chain = new Markov(fs.readFileSync('./public/compliments.txt', 'utf8'))
+randomCompliment = function() {
+  return compliments[Math.floor(Math.random() * compliments.length)];
+};
 
-    // Compliments will be about 4-6 words long
-    var compliment = chain.start('You').end(4 + Math.floor(6 * Math.random())).process()
+markovCompliment = function() {
+  var chain, compliment;
+  chain = new Markov(compliments);
+  compliment = chain.start('You').end(4 + Math.floor(6 * Math.random())).process();
+  if (sentiment.positivity(compliment).score > 3) {
+    return compliment;
+  } else {
+    return markovCompliment();
+  }
+};
 
-    if (sentiment.positivity(compliment).score > 3) {
-        return compliment
-    } else {
-        return generateCompliment()
-    }
-}
+module.exports.markov = markovCompliment;
 
-module.exports = function() {
-    return generateCompliment()
-}
+module.exports.compliment = randomCompliment;

@@ -19,7 +19,15 @@ app.get('/docs', function(req, res) {
 });
 
 app.get('/compliment', function(req, res) {
+	res.send('use /compliment/random or /compliment/markov');
+});
+
+app.get('/compliment/random', function(req, res) {
 	res.render('compliment', {compliment: compliment});
+});
+
+app.get('/compliment/markov', function(req, res) {
+	res.render('compliment', {compliment: markov});
 });
 
 app.listen(process.env.PORT || 2267);
