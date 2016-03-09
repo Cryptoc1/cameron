@@ -1,6 +1,8 @@
 var express = require('express'),
     app = express(),
-    cameron = require('./backend/cameron.js');
+    cameron = require('./backend/cameron.js')
+
+var comp = require('./backend/comp.js')
 
 app.use(express.static('public'));
 app.set('view engine', 'hbs');
@@ -54,6 +56,12 @@ app.get('/compliment/markov', function(req, res) {
 
 app.get('/api/v1/compliment', function(req, res) {
     cameron(function(compliment) {
+        res.send(compliment)
+    })
+})
+
+app.get('/testing', function(req, res) {
+    comp(function(compliment) {
         res.send(compliment)
     })
 })
