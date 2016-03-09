@@ -22,24 +22,21 @@ var compliments = fs.readFileSync('./public/compliments.txt', 'utf8');
     + Allow users to submit more compliments [, after validating with Sentimental,]  then write them to compliments.txt
  */
 
-random = function() {
-  var c = compliments.split("\n")
-  return c[Math.floor(Math.random() * c.length)];
-};
-
-markov = function() {
-  var chain, compliment;
-  chain = new Markov(compliments);
-  compliment = chain.start('You').end(4 + Math.floor(6 * Math.random())).process();
-  if (sentiment.positivity(compliment).score > 3) {
-    return compliment;
-  } else {
-    return markov();
+var compliment = {
+  random: function() {
+    var c = compliments.split("\n")
+    return c[Math.floor(Math.random() * c.length)];
+  },
+  markov: function() {
+    var chain, comp;
+    chain = new Markov(compliments);
+    comp = chain.start('You').end(4 + Math.floor(6 * Math.random())).process();
+    if (sentiment.positivity(comp).score > 3) {
+      return comp;
+    } else {
+      return compliment.markov()
+    }
   }
-};
+}
 
-console.log(markov())
-console.log(random())
-
-module.exports.markov = markov();
-module.exports.random = random();
+module.exports = compliment;
