@@ -1,8 +1,8 @@
 var express = require('express'),
     app = express(),
-    cameron = require('./backend/cameron.js')
+    cameron = require('./js/app/cameron.js')
 
-var comp = require('./backend/comp.js')
+var comp = require('./js/app/comp.js')
 
 app.use(express.static('public'));
 app.set('view engine', 'hbs');
