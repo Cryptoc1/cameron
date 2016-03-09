@@ -23,6 +23,11 @@ app.get('/docs', function(req, res) {
 
 app.get('/compliment', function(req, res) {
     cameron(function(compliment) {
+		if (req.query.name) {
+			compliment = req.query.name.capitalizeFirstCharacter() + ", " + compliment
+		} else {
+			compliment = compliment.capitalizeFirstCharacter()
+		}
         res.render('compliment', {
             compliment: compliment
         })
@@ -31,8 +36,9 @@ app.get('/compliment', function(req, res) {
 
 app.get('/compliment/:name', function(req, res) {
     cameron(function(compliment) {
+		var name = req.params.name
         res.render('compliment', {
-            compliment: req.params.name.capitalizeFirstCharacter() + ", " + compliment
+            compliment: name.capitalizeFirstCharacter() + ", " + compliment
         })
     })
 });
