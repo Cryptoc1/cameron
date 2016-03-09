@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 
-const compliment = require('./public/scripts/script.js');
+const compliment = require('./js/app/compliments.js');
 
 app.use(express.static('public'));
 app.set('view engine', 'hbs');
@@ -23,11 +23,11 @@ app.get('/compliment', function(req, res) {
 });
 
 app.get('/compliment/random', function(req, res) {
-	res.render('compliment', {compliment: compliment});
+	res.render('compliment', {compliment: compliment.random});
 });
 
 app.get('/compliment/markov', function(req, res) {
-	res.render('compliment', {compliment: markov});
+	res.render('compliment', {compliment: compliment.markov});
 });
 
 app.get('*', function(req, res) {
