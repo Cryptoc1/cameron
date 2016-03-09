@@ -1,38 +1,75 @@
-var express = require('express');
-var app = express();
+var express = require('express'),
+    app = express(),
+    cameron = require('./backend/cameron.js')
 
-const compliment = require('./js/app/compliments.js');
+var comp = require('./backend/comp.js')
 
 app.use(express.static('public'));
 app.set('view engine', 'hbs');
 
+String.prototype.capitalizeFirstCharacter = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1)
+}
+
 app.get('/', function(req, res) {
-	res.render('index');
+    res.render('index');
 });
 
 app.get('/about', function(req, res) {
-	res.render('about');
+    res.render('about');
 });
 
 app.get('/docs', function(req, res) {
-	res.render('docs')
+    res.render('docs')
 });
 
 app.get('/compliment', function(req, res) {
-	res.send('use /compliment/random or /compliment/markov');
+    cameron(function(compliment) {
+        if (req.query.name) {
+            compliment = req.query.name.capitalizeFirstCharacter() + ", " + compliment
+        } else {
+            compliment = compliment.capitalizeFirstCharacter()
+        }
+        res.render('compliment', {
+            compliment: compliment
+        })
+    })
 });
 
-app.get('/compliment/random', function(req, res) {
-	res.render('compliment', {compliment: compliment.random});
+app.get('/compliment/:name', function(req, res) {
+    cameron(function(compliment) {
+        var name = req.params.name
+        res.render('compliment', {
+            compliment: name.capitalizeFirstCharacter() + ", " + compliment
+        })
+    })
 });
 
 app.get('/compliment/markov', function(req, res) {
-	res.render('compliment', {compliment: compliment.markov});
+    // Keeping this for backwards compatibility (Boy, I do sound smart, huh??)
+    cameron(function(compliment) {
+        res.render('compliment', {
+            compliment: compliment
+        })
+    })
 });
+
+app.get('/api/v1/compliment', function(req, res) {
+    cameron(function(compliment) {
+        res.send(compliment)
+    })
+})
+
+app.get('/testing', function(req, res) {
+    comp(function(compliment) {
+        res.send(compliment)
+    })
+})
 
 app.get('*', function(req, res) {
-	res.send('dude what are you doing and how did you get here... <a href="/">go home</a>');
+    res.send('dude what are you doing and how did you get here... <a href="/">go home</a>');
 });
 
-app.listen(process.env.PORT || 2267);
-console.log('listening on port 2267');
+var server = app.listen(process.env.PORT || 2267, function() {
+    console.log("Listening at: http://0.0.0.0:%d", server.address().port)
+});
