@@ -1,12 +1,12 @@
 Cameron
 =======
 
-Introducing Cameron, the friendly API. Because everybody needs a pick-me-up.
+Introducing Cameron, the friendly API. Because everybody likes pick-me-ups.
 
 Development
 -----------
 
-Clone, install, and run, baby.
+Clone, install, and run, baby. Smooth as butter.
 
 ```bash
 git clone https://github.com/trmml/cameron
@@ -19,12 +19,28 @@ API Endpoints
 -------------
 
 ### `/compliment`
-Provides a random compliment.
+Provides a markov compliment.
+
+```
+https://cameron-api.herokuapp.com/compliment
+```
 
 ### `/compliment/:name`
-Compliments the provided name.
+Provides a markov compliment addressing `/:name`.
 
-You can also append the `?format=json` parameter to the URL if you'd like a response in raw JSON.
+```
+https://cameron-api.herokuapp.com/compliment/cameron
+https://cameron-api.herokuapp.com/compliment?name=cameron
+```
+
+Parameters
+---------
+### Format
+Cameron uses `?format=` for any non-HTML response. At the moment the only response supported is JSON.
+
+```
+https://cameron-api.herokuapp.com/compliment?format=json
+```
 
 LICENSE
 -------
