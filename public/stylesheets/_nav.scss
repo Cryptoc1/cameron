@@ -1,0 +1,37 @@
+nav#banner {
+    background-color: $banner-colour;
+    .fa {
+        margin: 10px;
+    }
+    h1 {
+        margin: 0;
+        padding: 1em;
+        color: #fff;
+        display: inline-block;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+    ul.page-links {
+        display: inline-block;
+        list-style-type: none;
+        float: right;
+        margin: 2.25em 1em 0 0;
+        li {
+            text-decoration: none;
+            display: inline;
+            height: 0 !important;
+            padding: 1em;
+            &:hover,
+            &#selected {
+                background: darken($banner-colour, 20%);
+            }
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.1em;
+            }
+        }
+    }
+}

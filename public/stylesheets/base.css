@@ -1,0 +1,46 @@
+nav#banner {
+  background-color: #7FDBFF; }
+  nav#banner .fa {
+    margin: 10px; }
+  nav#banner h1 {
+    margin: 0;
+    padding: 1em;
+    color: #fff;
+    display: inline-block; }
+    nav#banner h1 a {
+      color: inherit;
+      text-decoration: none; }
+  nav#banner ul.page-links {
+    display: inline-block;
+    list-style-type: none;
+    float: right;
+    margin: 2.25em 1em 0 0; }
+    nav#banner ul.page-links li {
+      text-decoration: none;
+      display: inline;
+      height: 0 !important;
+      padding: 1em; }
+      nav#banner ul.page-links li:hover, nav#banner ul.page-links li#selected {
+        background: #19beff; }
+      nav#banner ul.page-links li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1em; }
+
+.wrapper {
+  font-family: "Montserrat", sans-serif; }
+  .wrapper .content {
+    padding: 2.5vw; }
+    .wrapper .content p.about {
+      background-color: lightgrey;
+      padding: 20px; }
+      .wrapper .content p.about a {
+        color: inherit; }
+        .wrapper .content p.about a:visited {
+          color: inherit; }
+    .wrapper .content .compliment {
+      text-align: center;
+      margin-top: 10%; }
+
+body {
+  margin: 0; }

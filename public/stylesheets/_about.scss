@@ -1,0 +1,10 @@
+p.about {
+	background-color: lightgrey;
+	padding: 20px;
+	a {
+		color: inherit;
+		&:visited {
+			color: inherit;
+		}
+	}
+}
