@@ -26,6 +26,7 @@
   "dependencies": {
     "Sentimental": "^1.0.1",
     "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
     "hbs": "^4.0.0",
     "install": "^0.5.6",
     "markovchain": "^1.0.2",

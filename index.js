@@ -1,26 +1,29 @@
 var express = require('express'),
     app = express(),
+    exphbs = require('express-handlebars'),
     cameron = require('./js/app/cameron.js')
 
 var comp = require('./js/app/comp.js')
-
-app.use(express.static('public'));
-app.set('view engine', 'hbs');
 
 String.prototype.capitalizeFirstCharacter = function() {
     return this.charAt(0).toUpperCase() + this.slice(1)
 }
 
+app.use(express.static('public'));
+
+app.engine('handlebars', exphbs({defaultLayout: 'default'}));
+app.set('view engine', 'handlebars');
+
 app.get('/', function(req, res) {
-    res.render('index');
+    res.render('index', {home: true});
 });
 
 app.get('/about', function(req, res) {
-    res.render('about');
+    res.render('about', {about: true});
 });
 
 app.get('/docs', function(req, res) {
-    res.render('docs')
+    res.render('docs', {docs: true})
 });
 
 app.get('/compliment', function(req, res) {
