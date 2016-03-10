@@ -3,4 +3,18 @@
     @import 'compliment';
     @import 'index';
     padding: 1.2vw;
+    a:visited { color: inherit; }
+    .doc-block {
+    	h2 {
+    		margin-top: 1.3em;
+    	}
+    	textarea {
+    		background: $silver;
+    		outline: none;
+    		border: none;
+    		width: 60%;
+    		height: 5em;
+    		padding: 2em;
+    	}
+    }
 }

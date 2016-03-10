@@ -54,6 +54,17 @@ nav#banner {
         font-weight: bold;
         margin-bottom: 15px;
         font-size: 1.2em; }
+    .wrapper .content a:visited {
+      color: inherit; }
+    .wrapper .content .doc-block h2 {
+      margin-top: 1.3em; }
+    .wrapper .content .doc-block textarea {
+      background: #DDDDDD;
+      outline: none;
+      border: none;
+      width: 60%;
+      height: 5em;
+      padding: 2em; }
 
 footer {
   padding: 2.5vh; }

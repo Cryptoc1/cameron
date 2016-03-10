@@ -1,2 +1,17 @@
-<h2><a href="/compliment">/compliment</a> for a random compliment</h2>
-<h2><a href="/compliment/cameron">/compliment/:name</a> for a personalized compliment</h2>
+<h1>Information</h1>
+<h2>Please take note when using Cameron:</h2>
+
+<ul>
+	<li>This is a consumption-only API - only the HTTP GET method is available on resources.</li>
+	<li>No authentication is required to access this API. All resources are fully open and available.</li>
+</ul>
+
+<div class="doc-block">
+	<h2>GET compliment/{name}/</h2>
+	<p>Provides a randomly generated compliment using markov chains.</p>
+	<textarea>
+{
+	"compliment": "Cameron, you so interesting thing you makes you are funnier when you"
+}
+	</textarea>
+</div>
