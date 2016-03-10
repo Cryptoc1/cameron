@@ -24,6 +24,8 @@ Provides a random compliment.
 ### `/compliment/:name`
 Compliments the provided name.
 
+You can also append the `?format=json` parameter to the URL if you'd like a response in raw JSON.
+
 LICENSE
 -------
 

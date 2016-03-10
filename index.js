@@ -1,15 +1,17 @@
 var express = require('express'),
     app = express(),
     exphbs = require('express-handlebars'),
+    favicon = require('serve-favicon'),
     cameron = require('./js/app/cameron.js')
 
-var comp = require('./js/app/comp.js')
+const comp = require('./js/app/comp.js')
 
 String.prototype.capitalizeFirstCharacter = function() {
     return this.charAt(0).toUpperCase() + this.slice(1)
 }
 
 app.use(express.static('public'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 app.engine('handlebars', exphbs({defaultLayout: 'default'}));
 app.set('view engine', 'handlebars');
@@ -33,18 +35,27 @@ app.get('/compliment', function(req, res) {
         } else {
             compliment = compliment.capitalizeFirstCharacter()
         }
-        res.render('compliment', {
-            compliment: compliment
-        })
+        if (req.query.format === "json") {
+            res.json({compliment: compliment})
+        } else {
+            res.render('compliment', {
+                compliment: compliment
+            })
+        }
     })
 });
 
 app.get('/compliment/:name', function(req, res) {
     cameron(function(compliment) {
         var name = req.params.name
-        res.render('compliment', {
-            compliment: name.capitalizeFirstCharacter() + ", " + compliment
-        })
+        compliment = name.capitalizeFirstCharacter() + ", " + compliment
+        if (req.query.format === "json") {
+            res.json({compliment: compliment})
+        } else {
+            res.render('compliment', {
+                compliment: compliment
+            })
+        }
     })
 });
 

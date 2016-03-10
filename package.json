@@ -30,7 +30,8 @@
     "hbs": "^4.0.0",
     "install": "^0.5.6",
     "markovchain": "^1.0.2",
-    "npm": "^3.8.0"
+    "npm": "^3.8.0",
+    "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
